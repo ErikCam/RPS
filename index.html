@@ -10,51 +10,55 @@
         let choices = ["Rock", "Paper", "Scissors"];
         
         function computerPlay() {
-            let computerSelection = Math.floor(Math.random() * choices.length);
-            return choices[computerSelection];
+            let computerChoice = Math.floor(Math.random() * choices.length);
+            return choices[computerChoice];
         }
 
-        function playRound(playerSelection, computerSelection) {
-            playerSelection = prompt("Rock, Paper, or Scissors?");
-            computerSelection = computerPlay();
+        function playRound(playerSelection, computerSelection = computerPlay()) {
+            console.log("Your opponent chose " +computerSelection);
 
-            switch (playerSelection.toUpperCase() === "Rock".toUpperCase()) {
-                case computerSelection === "Paper":
+            if (playerSelection.toUpperCase() === "Rock".toUpperCase()) {
+                if (computerSelection === "Paper") {
                     return "You Lose! Paper beats Rock";
-                    break;
-                
-                case computerSelection === "Scissors":
+                }
+                else if (computerSelection === "Scissors") {
                     return "You Win! Rock beats Scissors";
-                    break;
-
-                default:
+                }
+                else {
                     return "It's a Tie!";
+                }
             }
 
-            switch (playerSelection.toUpperCase() === "Paper".toUpperCase()) {
-                case computerSelection === "Rock":
+            else if (playerSelection.toUpperCase() === "Paper".toUpperCase()) {
+                if (computerSelection === "Rock") {
                     return "YOu Win! Paper beats Rock";
-                    break;
+                }
 
-                case computerSelection === "Scissors":
+                else if (computerSelection === "Scissors"){
                     return "You Lose! Scissors beats Paper";
-                    break;
+                }
 
-                default:
+                else{
                     return "It's a Tie!";
+                }
             }
 
-            switch (playerSelection.toUpperCase() === "Scissors".toUpperCase()) {
-                case computerSelection === "Rock":
+            else if (playerSelection.toUpperCase() === "Scissors".toUpperCase()) {
+                if (computerSelection === "Rock") {
                     return "You Lose! Rock beats Scissors";
-                    break;
+                }
 
-                case computerSelection === "Paper":
+                else if (computerSelection === "Paper") {
                     return "You Win! Paper beats Scissors";
-                    break;
+                }
 
-                default:
+                else {
                     return "It's a Tie!";
+                }
+            }
+
+            else {
+                return "Invalid entry. Try again"
             }
         }
     </script>
