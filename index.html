@@ -14,14 +14,18 @@
             return choices[computerChoice];
         }
 
-        function playRound(playerSelection, computerSelection = computerPlay()) {
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = prompt("Rock, Paper, or Scissors?");
+            computerSelection = computerPlay();
             console.log("Your opponent chose " +computerSelection);
 
             if (playerSelection.toUpperCase() === "Rock".toUpperCase()) {
                 if (computerSelection === "Paper") {
+                    computerWins++;
                     return "You Lose! Paper beats Rock";
                 }
                 else if (computerSelection === "Scissors") {
+                    playerWins++;
                     return "You Win! Rock beats Scissors";
                 }
                 else {
@@ -31,10 +35,12 @@
 
             else if (playerSelection.toUpperCase() === "Paper".toUpperCase()) {
                 if (computerSelection === "Rock") {
+                    playerWins++;
                     return "YOu Win! Paper beats Rock";
                 }
 
                 else if (computerSelection === "Scissors"){
+                    computerWins++;
                     return "You Lose! Scissors beats Paper";
                 }
 
@@ -45,10 +51,12 @@
 
             else if (playerSelection.toUpperCase() === "Scissors".toUpperCase()) {
                 if (computerSelection === "Rock") {
+                    computerWins++;
                     return "You Lose! Rock beats Scissors";
                 }
 
                 else if (computerSelection === "Paper") {
+                    playerWins++;
                     return "You Win! Paper beats Scissors";
                 }
 
@@ -59,6 +67,24 @@
 
             else {
                 return "Invalid entry. Try again"
+            }
+        }
+
+        function game() {
+            let playerWins = 0;
+            let computerWins = 0;
+
+            while (playerWins < 3 && computerWins < 3) {
+                playRound();
+                console.log("Player: " +playerWins+ " || Opponent: " +computerWins);
+            }
+
+            if (playerWins > computerWins) {
+                console.log("Congratulations! You won the game!");
+            }
+
+            else {
+                console.log("You lost the game! Better luck next time.");
             }
         }
     </script>
