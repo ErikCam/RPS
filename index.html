@@ -8,7 +8,9 @@
 <body>
     <script>
         let choices = ["Rock", "Paper", "Scissors"];
-        
+        let computerWins;
+        let playerWins;
+
         function computerPlay() {
             let computerChoice = Math.floor(Math.random() * choices.length);
             return choices[computerChoice];
@@ -17,6 +19,7 @@
         function playRound(playerSelection, computerSelection) {
             playerSelection = prompt("Rock, Paper, or Scissors?");
             computerSelection = computerPlay();
+            console.log("You chose " +playerSelection);
             console.log("Your opponent chose " +computerSelection);
 
             if (playerSelection.toUpperCase() === "Rock".toUpperCase()) {
@@ -71,8 +74,8 @@
         }
 
         function game() {
-            let playerWins = 0;
-            let computerWins = 0;
+            playerWins = 0;
+            computerWins = 0;
 
             while (playerWins < 3 && computerWins < 3) {
                 playRound();
