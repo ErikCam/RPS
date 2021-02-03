@@ -24,52 +24,52 @@
 
             if (playerSelection.toUpperCase() === "Rock".toUpperCase()) {
                 if (computerSelection === "Paper") {
-                    computerWins++;
-                    return "You Lose! Paper beats Rock";
+                    console.log("You Lose! Paper beats Rock");
+                    return computerWins++;
                 }
                 else if (computerSelection === "Scissors") {
-                    playerWins++;
-                    return "You Win! Rock beats Scissors";
+                    console.log("You Win! Rock beats Scissors");
+                    return playerWins++;
                 }
                 else {
-                    return "It's a Tie!";
+                    console.log("It's a Tie!");
                 }
             }
 
             else if (playerSelection.toUpperCase() === "Paper".toUpperCase()) {
                 if (computerSelection === "Rock") {
-                    playerWins++;
-                    return "YOu Win! Paper beats Rock";
+                    console.log("You Win! Paper beats Rock");
+                    return playerWins++;
                 }
 
                 else if (computerSelection === "Scissors"){
-                    computerWins++;
-                    return "You Lose! Scissors beats Paper";
+                    console.log("You Lose! Scissors beats Paper");
+                    return computerWins++;
                 }
 
                 else{
-                    return "It's a Tie!";
+                    console.log("It's a Tie!");
                 }
             }
 
             else if (playerSelection.toUpperCase() === "Scissors".toUpperCase()) {
                 if (computerSelection === "Rock") {
-                    computerWins++;
-                    return "You Lose! Rock beats Scissors";
+                    console.log("You Lose! Rock beats Scissors");
+                    return computerWins++;
                 }
 
                 else if (computerSelection === "Paper") {
-                    playerWins++;
-                    return "You Win! Paper beats Scissors";
+                    console.log("You Win! Paper beats Scissors");
+                    return playerWins++;
                 }
 
                 else {
-                    return "It's a Tie!";
+                    console.log("It's a Tie!");
                 }
             }
 
             else {
-                return "Invalid entry. Try again"
+                console.log("Invalid entry. Try again");
             }
         }
 
