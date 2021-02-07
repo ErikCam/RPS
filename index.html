@@ -10,18 +10,22 @@
         let choices = ["Rock", "Paper", "Scissors"];
         let computerWins;
         let playerWins;
-
+        
+        //chooses a random item from the array "choices"
         function computerPlay() {
             let computerChoice = Math.floor(Math.random() * choices.length);
             return choices[computerChoice];
         }
-
+        
+        //plays one round of rock, paper, scissors
         function playRound(playerSelection, computerSelection) {
             playerSelection = prompt("Rock, Paper, or Scissors?");
             computerSelection = computerPlay();
             console.log("You chose " +playerSelection);
             console.log("Your opponent chose " +computerSelection);
-
+            
+            //these if statements give a point to the player or
+            //computer depending on who won
             if (playerSelection.toUpperCase() === "Rock".toUpperCase()) {
                 if (computerSelection === "Paper") {
                     console.log("You Lose! Paper beats Rock");
@@ -73,6 +77,7 @@
             }
         }
 
+        //plays a full best-out-of-5 game of rock, paper, scissors
         function game() {
             playerWins = 0;
             computerWins = 0;
